@@ -1,7 +1,10 @@
 
 <ul>
   <% @tasks.each do |t| %>
-    <li><%= link_to t.title, task_path(t) %></li>
+    <li><%= link_to t.title, task_path(t) %>
+      <%= link_to "delete", task_path(t), method: :delete, data:{confirm: "Are you sure?"} %>
+      <%= link_to "update", edit_task_path(t) %>
+    </li>
   <% end %>
 
 </ul>
